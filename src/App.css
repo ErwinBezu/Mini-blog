@@ -5,73 +5,200 @@
 }
 
 :root {
-  /* Couleurs principales */
-  --primary-color: #4f46e5;
-  --primary-dark: #3730a3;
-  --primary-light: #a5b4fc;
-  --secondary-color: #64748b;
-  --success-color: #10b981;
-  --error-color: #ef4444;
-  --warning-color: #f59e0b;
+  /* Couleurs qui brûlent la rétine */
+  --primary-color: #FF1493; /* Hot Pink */
+  --primary-dark: #FF69B4; /* Pink */
+  --primary-light: #FFB6C1; /* Light Pink */
+  --secondary-color: #00FF00; /* Lime Green */
+  --accent-color: #FFFF00; /* Yellow */
+  --accent-2: #FF4500; /* Orange Red */
+  --accent-3: #8A2BE2; /* Blue Violet */
+  --success-color: #00FFFF; /* Cyan */
+  --error-color: #FF0000; /* Pure Red */
+  --warning-color: #FFA500; /* Orange */
   
-  /* Arrière-plans et surfaces */
-  --background-color: #f8fafc;
-  --background-secondary: #f1f5f9;
-  --surface-color: #ffffff;
-  --surface-elevated: #ffffff;
+  /* Arrière-plans agressifs */
+  --bg-primary: linear-gradient(45deg, #FF1493, #00FF00, #FFFF00, #FF4500);
+  --bg-secondary: linear-gradient(90deg, #8A2BE2, #FF69B4, #00FFFF);
+  --bg-tertiary: repeating-linear-gradient(45deg, #FF0000, #FF0000 10px, #FFFF00 10px, #FFFF00 20px);
+  --bg-animated: linear-gradient(45deg, #FF1493, #00FF00, #FFFF00, #FF4500, #8A2BE2);
   
-  /* Textes */
-  --text-primary: #1e293b;
-  --text-secondary: #64748b;
-  --text-muted: #94a3b8;
+  /* Textes qui agressent */
+  --text-primary: #FF0000;
+  --text-secondary: #00FF00;
+  --text-muted: #FF1493;
+  --text-glow: #FFFF00;
   
-  /* Bordures */
-  --border-color: #e2e8f0;
-  --border-light: #f1f5f9;
-  
-  /* Rayons de bordure */
-  --radius-sm: 6px;
-  --radius-md: 8px;
-  --radius-lg: 12px;
-  --radius-xl: 16px;
-  
-  /* Ombres */
-  --shadow-xs: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-sm: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  
-  /* Transitions */
-  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-normal: 200ms cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: 300ms cubic-bezier(0.4, 0, 0.2, 1);
-  
-  /* Espacement */
-  --spacing-xs: 0.25rem;
-  --spacing-sm: 0.5rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 1.5rem;
-  --spacing-xl: 2rem;
-  --spacing-2xl: 3rem;
+  /* Bordures et ombres */
+  --border-rainbow: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+  --glow-rainbow: 0 0 10px red, 0 0 20px orange, 0 0 30px yellow, 0 0 40px green, 0 0 50px blue, 0 0 60px indigo, 0 0 70px violet;
+  --shadow-massive: 10px 10px 0px #FF0000, 15px 15px 0px #00FF00, 20px 20px 0px #FFFF00;
 }
 
-/* Typographie */
+/* ANIMATIONS QUI DONNENT MAL À LA TÊTE */
+@keyframes rainbow-spin {
+  0% { 
+    background: linear-gradient(0deg, red, orange, yellow, green, blue, indigo, violet);
+    transform: rotate(0deg) scale(1);
+  }
+  25% { 
+    background: linear-gradient(90deg, orange, yellow, green, blue, indigo, violet, red);
+    transform: rotate(90deg) scale(1.2);
+  }
+  50% { 
+    background: linear-gradient(180deg, yellow, green, blue, indigo, violet, red, orange);
+    transform: rotate(180deg) scale(0.8);
+  }
+  75% { 
+    background: linear-gradient(270deg, green, blue, indigo, violet, red, orange, yellow);
+    transform: rotate(270deg) scale(1.5);
+  }
+  100% { 
+    background: linear-gradient(360deg, red, orange, yellow, green, blue, indigo, violet);
+    transform: rotate(360deg) scale(1);
+  }
+}
+
+@keyframes epileptic-flash {
+  0% { background-color: #FF0000; }
+  10% { background-color: #00FF00; }
+  20% { background-color: #0000FF; }
+  30% { background-color: #FFFF00; }
+  40% { background-color: #FF00FF; }
+  50% { background-color: #00FFFF; }
+  60% { background-color: #FF8000; }
+  70% { background-color: #8000FF; }
+  80% { background-color: #FF0080; }
+  90% { background-color: #80FF00; }
+  100% { background-color: #FF0000; }
+}
+
+@keyframes seizure-inducing-text {
+  0% { 
+    color: #FF0000; 
+    text-shadow: 0 0 10px #FF0000;
+    transform: skewX(0deg) scale(1);
+  }
+  16% { 
+    color: #00FF00; 
+    text-shadow: 0 0 20px #00FF00;
+    transform: skewX(15deg) scale(1.3);
+  }
+  32% { 
+    color: #0000FF; 
+    text-shadow: 0 0 15px #0000FF;
+    transform: skewX(-10deg) scale(0.7);
+  }
+  48% { 
+    color: #FFFF00; 
+    text-shadow: 0 0 25px #FFFF00;
+    transform: skewX(25deg) scale(1.8);
+  }
+  64% { 
+    color: #FF00FF; 
+    text-shadow: 0 0 30px #FF00FF;
+    transform: skewX(-20deg) scale(0.5);
+  }
+  80% { 
+    color: #00FFFF; 
+    text-shadow: 0 0 18px #00FFFF;
+    transform: skewX(35deg) scale(1.6);
+  }
+  100% { 
+    color: #FF0000; 
+    text-shadow: 0 0 10px #FF0000;
+    transform: skewX(0deg) scale(1);
+  }
+}
+
+@keyframes nauseating-wobble {
+  0% { transform: rotate(0deg) translateX(0) skewY(0deg); }
+  10% { transform: rotate(18deg) translateX(5px) skewY(5deg); }
+  20% { transform: rotate(-15deg) translateX(-8px) skewY(-3deg); }
+  30% { transform: rotate(22deg) translateX(12px) skewY(8deg); }
+  40% { transform: rotate(-25deg) translateX(-6px) skewY(-10deg); }
+  50% { transform: rotate(30deg) translateX(15px) skewY(12deg); }
+  60% { transform: rotate(-20deg) translateX(-10px) skewY(-7deg); }
+  70% { transform: rotate(28deg) translateX(8px) skewY(15deg); }
+  80% { transform: rotate(-12deg) translateX(-15px) skewY(-5deg); }
+  90% { transform: rotate(16deg) translateX(6px) skewY(9deg); }
+  100% { transform: rotate(0deg) translateX(0) skewY(0deg); }
+}
+
+@keyframes vomit-inducing-pulse {
+  0% { 
+    filter: hue-rotate(0deg) saturate(300%) contrast(200%);
+    transform: scale(1) rotateX(0deg);
+  }
+  25% { 
+    filter: hue-rotate(90deg) saturate(500%) contrast(300%);
+    transform: scale(1.5) rotateX(45deg);
+  }
+  50% { 
+    filter: hue-rotate(180deg) saturate(800%) contrast(400%);
+    transform: scale(0.3) rotateX(90deg);
+  }
+  75% { 
+    filter: hue-rotate(270deg) saturate(1000%) contrast(500%);
+    transform: scale(2) rotateX(135deg);
+  }
+  100% { 
+    filter: hue-rotate(360deg) saturate(300%) contrast(200%);
+    transform: scale(1) rotateX(180deg);
+  }
+}
+
+/* TYPOGRAPHIE DE L'ENFER */
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@400;700&family=Creepster&family=Griffy&display=swap');
+
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  background: linear-gradient(135deg, var(--background-color) 0%, var(--background-secondary) 100%);
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive !important;
+  background: var(--bg-animated);
+  background-size: 400% 400%;
+  animation: rainbow-spin 3s linear infinite, epileptic-flash 0.5s linear infinite;
   color: var(--text-primary);
-  line-height: 1.6;
+  line-height: 2.5;
   min-height: 100vh;
+  overflow-x: auto;
+  position: relative;
+  filter: saturate(500%) contrast(200%);
+}
+
+/* PARTICULES DE VOMISSEMENT */
+body::before {
+  content: '💖🌈✨💫⭐🦄🌟💕🎉🎊💎🔥❤️💚💛💜🧡💙';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 2rem;
+  animation: nauseating-wobble 2s ease-in-out infinite;
+  pointer-events: none;
+  z-index: 1000;
+  opacity: 0.7;
+}
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-conic-gradient(from 0deg, red 0deg 60deg, orange 60deg 120deg, yellow 120deg 180deg, green 180deg 240deg, blue 240deg 300deg, violet 300deg 360deg);
+  animation: rainbow-spin 1s linear infinite;
+  opacity: 0.3;
+  pointer-events: none;
+  z-index: 999;
 }
 
 .App {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  position: relative;
+  transform-style: preserve-3d;
 }
 
 .main-content {
@@ -79,227 +206,303 @@ body {
   max-width: 1200px;
   width: 100%;
   margin: 0 auto;
-  padding: var(--spacing-xl) var(--spacing-md);
+  padding: 2rem 1rem;
+  position: relative;
+  z-index: 10;
+  animation: vomit-inducing-pulse 4s ease-in-out infinite;
 }
 
-/* Boutons améliorés */
+/* BOUTONS DE L'APOCALYPSE */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.75rem 1.5rem;
-  border-radius: var(--radius-md);
-  font-size: 0.875rem;
-  font-weight: 600;
+  padding: 1rem 3rem;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: 900;
   text-decoration: none;
-  border: none;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  border: 5px solid;
   cursor: pointer;
-  transition: all var(--transition-normal);
+  transition: none;
   gap: 0.5rem;
   position: relative;
-  overflow: hidden;
-  font-family: inherit;
-  letter-spacing: 0.025em;
+  overflow: visible;
+  font-family: 'Creepster', cursive;
+  animation: seizure-inducing-text 1s linear infinite, nauseating-wobble 3s ease-in-out infinite;
+  box-shadow: var(--shadow-massive);
 }
 
 .btn::before {
-  content: '';
+  content: '✨💖✨💖✨💖✨💖✨';
   position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transition: left var(--transition-slow);
+  top: -20px;
+  left: -50%;
+  right: -50%;
+  font-size: 2rem;
+  animation: rainbow-spin 2s linear infinite;
 }
 
-.btn:hover::before {
-  left: 100%;
-}
-
-.btn:disabled {
-  opacity: 0.5;
-  cursor: not-allowed;
-}
-
-.btn:disabled::before {
-  display: none;
+.btn::after {
+  content: '🌈🦄🌈🦄🌈🦄🌈🦄🌈';
+  position: absolute;
+  bottom: -20px;
+  left: -50%;
+  right: -50%;
+  font-size: 1.5rem;
+  animation: rainbow-spin 1.5s linear infinite reverse;
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-  color: white;
-  box-shadow: var(--shadow-sm);
+  background: var(--bg-animated);
+  background-size: 400% 400%;
+  border-color: var(--error-color);
+  color: var(--secondary-color);
+  animation: seizure-inducing-text 0.8s linear infinite, rainbow-spin 2s linear infinite, nauseating-wobble 2.5s ease-in-out infinite;
 }
 
 .btn-primary:hover:not(:disabled) {
-  transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
-}
-
-.btn-primary:active:not(:disabled) {
-  transform: translateY(0);
-  box-shadow: var(--shadow-sm);
+  transform: rotate(720deg) scale(3) skewX(45deg);
+  filter: hue-rotate(360deg) saturate(1000%) contrast(500%);
+  box-shadow: var(--glow-rainbow);
 }
 
 .btn-secondary {
-  background-color: var(--surface-color);
-  color: var(--text-primary);
-  border: 1px solid var(--border-color);
-  box-shadow: var(--shadow-xs);
+  background: repeating-linear-gradient(45deg, #FF0000 0px, #00FF00 10px, #0000FF 20px, #FFFF00 30px);
+  border-color: var(--accent-3);
+  color: var(--accent-color);
+  animation: epileptic-flash 0.3s linear infinite, nauseating-wobble 1.8s ease-in-out infinite;
 }
 
 .btn-secondary:hover:not(:disabled) {
-  background-color: var(--background-secondary);
-  border-color: var(--border-light);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-md);
+  animation: seizure-inducing-text 0.1s linear infinite, rainbow-spin 0.5s linear infinite;
+  transform: rotate(-360deg) scale(2.5) skewY(30deg);
 }
 
-.btn-secondary:active:not(:disabled) {
-  transform: translateY(0);
-  box-shadow: var(--shadow-xs);
-}
-
-/* États de chargement et d'erreur */
+/* CHARGEMENT DE LA MORT */
 .loading-container, .error-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: var(--spacing-2xl);
+  padding: 3rem;
   text-align: center;
+  background: var(--bg-tertiary);
+  border: 10px dashed var(--secondary-color);
+  border-radius: 50px;
+  animation: vomit-inducing-pulse 2s ease-in-out infinite, nauseating-wobble 3s ease-in-out infinite;
 }
 
 .loading-spinner {
-  width: 40px;
-  height: 40px;
-  border: 3px solid var(--border-light);
-  border-top: 3px solid var(--primary-color);
+  width: 100px;
+  height: 100px;
+  border: 10px solid var(--error-color);
+  border-top: 10px solid var(--secondary-color);
+  border-right: 10px solid var(--accent-color);
+  border-bottom: 10px solid var(--accent-2);
+  border-left: 10px solid var(--accent-3);
   border-radius: 50%;
-  animation: spin 1s linear infinite;
-  margin-bottom: var(--spacing-lg);
+  animation: rainbow-spin 0.2s linear infinite, nauseating-wobble 1s ease-in-out infinite;
+  margin-bottom: 2rem;
+  box-shadow: var(--glow-rainbow);
 }
 
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* Messages d'erreur et de succès */
-.error-message-container {
-  margin: var(--spacing-lg) 0;
-}
-
+/* MESSAGES D'HORREUR */
 .error-message {
-  background: linear-gradient(135deg, #fef2f2 0%, #fdf2f8 100%);
-  border: 1px solid #fecaca;
-  color: var(--error-color);
-  padding: var(--spacing-lg);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-sm);
+  background: var(--bg-tertiary);
+  border: 5px solid var(--error-color);
+  color: var(--secondary-color);
+  padding: 2rem;
+  border-radius: 25px;
+  font-size: 1.5rem;
+  font-weight: 900;
+  font-family: 'Griffy', cursive;
+  animation: seizure-inducing-text 1.5s linear infinite, epileptic-flash 0.8s linear infinite;
+  box-shadow: var(--shadow-massive);
+  text-transform: uppercase;
+  letter-spacing: 2px;
 }
 
 .success-message {
-  background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
-  border: 1px solid #bbf7d0;
-  color: var(--success-color);
-  padding: var(--spacing-xl);
-  border-radius: var(--radius-lg);
+  background: repeating-radial-gradient(circle, #FF1493 0%, #00FF00 25%, #FFFF00 50%, #FF4500 75%, #8A2BE2 100%);
+  border: 8px double var(--success-color);
+  color: var(--error-color);
+  padding: 3rem;
+  border-radius: 50px;
   text-align: center;
-  box-shadow: var(--shadow-sm);
+  font-size: 2rem;
+  font-weight: 900;
+  font-family: 'Creepster', cursive;
+  animation: rainbow-spin 1s linear infinite, vomit-inducing-pulse 2s ease-in-out infinite;
+  box-shadow: var(--glow-rainbow);
+  text-transform: uppercase;
 }
 
-/* Fil d'Ariane */
+/* FIL D'ARIANE DE L'ENFER */
 .breadcrumb {
   display: flex;
   align-items: center;
-  gap: var(--spacing-sm);
-  margin-bottom: var(--spacing-xl);
-  font-size: 0.875rem;
-  padding: var(--spacing-md);
-  background-color: var(--surface-color);
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-xs);
+  gap: 1rem;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  padding: 1.5rem;
+  background: var(--bg-secondary);
+  border: 5px ridge var(--accent-color);
+  border-radius: 25px;
+  font-family: 'Griffy', cursive;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: nauseating-wobble 4s ease-in-out infinite;
 }
 
 .breadcrumb-link {
   color: var(--primary-color);
   text-decoration: none;
-  font-weight: 500;
-  transition: color var(--transition-fast);
+  font-weight: 900;
+  animation: seizure-inducing-text 2s linear infinite;
+  text-shadow: 3px 3px 0px var(--secondary-color);
 }
 
 .breadcrumb-link:hover {
-  color: var(--primary-dark);
+  animation: rainbow-spin 0.5s linear infinite, seizure-inducing-text 0.3s linear infinite;
+  transform: scale(2) rotate(180deg);
 }
 
 .breadcrumb-separator {
-  color: var(--text-muted);
+  color: var(--accent-2);
+  font-size: 2rem;
+  font-weight: 900;
+  animation: rainbow-spin 3s linear infinite;
+  text-shadow: var(--glow-rainbow);
 }
 
 .breadcrumb-current {
-  color: var(--text-secondary);
-  font-weight: 600;
+  color: var(--text-glow);
+  font-weight: 900;
+  animation: epileptic-flash 0.5s linear infinite;
+  text-shadow: 5px 5px 0px var(--error-color);
 }
 
-/* En-têtes de page */
+/* EN-TÊTES DÉGUEULASSES */
 .page-header {
   text-align: center;
-  margin-bottom: var(--spacing-2xl);
-  padding: var(--spacing-xl) 0;
+  margin-bottom: 3rem;
+  padding: 4rem 0;
+  position: relative;
+  background: var(--bg-animated);
+  background-size: 400% 400%;
+  border: 10px outset var(--secondary-color);
+  border-radius: 50px;
+  animation: rainbow-spin 5s linear infinite, vomit-inducing-pulse 3s ease-in-out infinite;
 }
 
 .page-header h1 {
+  font-size: 5rem;
+  font-weight: 900;
+  margin-bottom: 2rem;
+  font-family: 'Creepster', cursive;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  animation: seizure-inducing-text 1s linear infinite, nauseating-wobble 2s ease-in-out infinite;
+  text-shadow: 
+    5px 5px 0px #FF0000,
+    10px 10px 0px #00FF00,
+    15px 15px 0px #0000FF,
+    20px 20px 0px #FFFF00;
+  transform-style: preserve-3d;
+}
+
+.page-header h1::before {
+  content: '🌈💖✨🦄💎🔥⭐💫🎉🎊';
+  display: block;
   font-size: 3rem;
-  font-weight: 800;
-  margin-bottom: var(--spacing-lg);
-  color: var(--text-primary);
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  animation: rainbow-spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+.page-header h1::after {
+  content: '💕💚💛💜🧡💙❤️💖💝💘';
+  display: block;
+  font-size: 2rem;
+  animation: rainbow-spin 1.5s linear infinite reverse;
+  margin-top: 1rem;
 }
 
 .page-description {
-  font-size: 1.25rem;
-  color: var(--text-secondary);
-  max-width: 600px;
+  font-size: 1.8rem;
+  color: var(--secondary-color);
+  max-width: 800px;
   margin: 0 auto;
-  line-height: 1.7;
+  line-height: 2;
+  font-weight: 900;
+  font-family: 'Comic Neue', cursive;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  animation: epileptic-flash 1.2s linear infinite;
+  text-shadow: 3px 3px 0px var(--error-color);
 }
 
-/* Responsive */
+/* RESPONSIVE CAUCHEMARDESQUE */
 @media (max-width: 768px) {
-  .main-content {
-    padding: var(--spacing-lg) var(--spacing-md);
+  body {
+    animation-duration: 1s, 0.3s;
   }
   
   .page-header h1 {
-    font-size: 2.25rem;
-  }
-  
-  .page-description {
-    font-size: 1.125rem;
+    font-size: 4rem;
+    animation-duration: 0.5s, 1s;
   }
   
   .btn {
-    padding: 0.625rem 1.25rem;
-    font-size: 0.8125rem;
-  }
-  
-  .breadcrumb {
-    margin-bottom: var(--spacing-lg);
-    padding: var(--spacing-sm) var(--spacing-md);
+    font-size: 1rem;
+    animation-duration: 0.5s, 2s;
   }
 }
 
 @media (max-width: 480px) {
-  .page-header h1 {
-    font-size: 1.875rem;
+  body::before {
+    font-size: 1rem;
+    animation-duration: 1s;
   }
   
-  .loading-container, .error-container {
-    padding: var(--spacing-lg);
+  .page-header h1 {
+    font-size: 3rem;
   }
+  
+  * {
+    animation-duration: 0.3s !important;
+  }
+}
+
+/* SCROLLBAR DE L'APOCALYPSE */
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-tertiary);
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-animated);
+  background-size: 400% 400%;
+  border-radius: 10px;
+  border: 3px solid var(--error-color);
+  animation: rainbow-spin 2s linear infinite;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  animation: seizure-inducing-text 0.2s linear infinite, rainbow-spin 0.5s linear infinite;
+  box-shadow: var(--glow-rainbow);
+}
+
+/* SÉLECTION DE TEXTE HORRIBLE */
+::selection {
+  background: var(--bg-animated);
+  color: var(--error-color);
+  text-shadow: 2px 2px 0px var(--secondary-color);
 }

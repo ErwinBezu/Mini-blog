@@ -1,0 +1,136 @@
+.post-form-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.post-form {
+  background-color: var(--surface-color);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+  font-size: 1rem;
+  line-height: 1.5;
+  background-color: var(--surface-color);
+  color: var(--text-primary);
+  transition: all 0.2s ease-in-out;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgb(59 130 246 / 0.1);
+}
+
+.form-input.error,
+.form-textarea.error {
+  border-color: var(--error-color);
+}
+
+.form-input.error:focus,
+.form-textarea.error:focus {
+  box-shadow: 0 0 0 3px rgb(239 68 68 / 0.1);
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.form-input:disabled,
+.form-textarea:disabled {
+  background-color: var(--background-color);
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.error-message {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--error-color);
+}
+
+.form-hint {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-color);
+}
+
+/* Animation de soumission */
+.post-form.submitting {
+  opacity: 0.7;
+  pointer-events: none;
+}
+
+.post-form.submitting .form-input,
+.post-form.submitting .form-textarea {
+  background-color: var(--background-color);
+}
+
+/* États de validation */
+.form-input.valid {
+  border-color: var(--success-color);
+}
+
+.form-input.valid:focus {
+  box-shadow: 0 0 0 3px rgb(16 185 129 / 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .post-form {
+    padding: 1.5rem;
+  }
+  
+  .form-actions {
+    flex-direction: column-reverse;
+  }
+  
+  .form-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .post-form-container {
+    margin: 0 -1rem;
+  }
+  
+  .post-form {
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+  }
+}

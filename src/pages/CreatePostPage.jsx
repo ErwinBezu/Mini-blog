@@ -108,11 +108,6 @@ const CreatePostPage = () => {
 
       <div className="info-box">
         <h3>Information</h3>
-        <p>
-          Ce formulaire utilise l'API JSONPlaceholder pour la démonstration. 
-          Le post sera créé avec un ID simulé et ne sera pas réellement sauvegardé 
-          sur le serveur.
-        </p>
         <ul>
           <li>Les ID utilisateurs valides vont de 1 à 10</li>
           <li>Le titre doit contenir au moins 5 caractères</li>

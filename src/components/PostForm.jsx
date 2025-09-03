@@ -16,9 +16,7 @@ const PostForm = ({ onSubmit, isLoading = false }) => {
       ...prev,
       [name]: value
     }));
-    
-    // Effacer l'erreur quand l'utilisateur tape
-    if (errors[name]) {
+        if (errors[name]) {
       setErrors(prev => ({
         ...prev,
         [name]: ''

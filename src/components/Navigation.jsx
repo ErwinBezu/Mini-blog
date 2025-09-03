@@ -12,7 +12,7 @@ const Navigation = () => {
     <nav className="navbar">
       <div className="nav-container">
         <Link to="/" className="nav-brand">
-          📝 Mini Blog
+          Mini Blog
         </Link>
         <ul className="nav-menu">
           <li className="nav-item">

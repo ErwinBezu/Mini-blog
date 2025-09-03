@@ -80,7 +80,7 @@ const PostCard = ({ post }) => {
           to={`/post/${post.id}`} 
           className="read-more-btn"
         >
-          Lire plus →
+          Lire plus
         </Link>
       </div>
     </article>
